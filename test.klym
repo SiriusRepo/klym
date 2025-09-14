@@ -1,0 +1,34 @@
+class Variant {
+    string Type;
+    long Value;
+
+    prefix Variant new(string Type, unknown Value) {
+        Variant this = Variant blank;
+        this.Type = Type;
+        this.Value = Value;
+        return this;
+    }
+}
+
+enum Types {
+    int;
+    long;
+    float;
+    double;
+    char;
+    string;
+}
+
+string GetType(Variant val) { // Ooo big if else chain
+    switch val {
+        case Types:int return "int";
+        case Types:long return "long";
+        case Types:float return "float";
+        case Types:double return "double";
+        case Types:char return "char";
+        case Types:string return "string";
+    }
+}
+
+Variant MyVariant = new Variant(Types:int, 5i);
+console.log(GetType(MyVariant)); // >> int
