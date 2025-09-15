@@ -2,8 +2,8 @@ class Variant {
     string Type;
     long Value;
 
-    prefix Variant new(string Type, unknown Value) {
-        Variant this = Variant blank;
+    constructor(string Type, unknown Value) {
+        Variant this = blank;
         this.Type = Type;
         this.Value = Value;
         return this;
@@ -19,7 +19,7 @@ enum Types {
     string;
 }
 
-string GetType(Variant val) { // Ooo big if else chain
+string GetType(Variant val) {
     switch val {
         case Types:int return "int";
         case Types:long return "long";

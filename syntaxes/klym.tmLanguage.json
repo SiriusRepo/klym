@@ -16,7 +16,15 @@
         },
         {
             "name": "constant.numeric.klym",
-            "match": "\\b([0-9]*\\.[0-9]+|[0-9]+)(i|l|f|d)?\\b"
+            "match": "\\b([0-9]*\\.[0-9]+|[0-9]+)[ilfdILFD]?\\b"
+        },
+        {
+            "name": "entity.name.type.klym",
+            "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?=:)"
+        },
+        {
+            "name": "variable.enum.klym",
+            "match": "(?<=:)[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
         {
             "name": "punctuation.klym",
@@ -25,14 +33,6 @@
         {
             "name": "keyword.control.klym",
             "match": "\\b(if|else|for|while|return|switch|case)\\b"
-        },
-        {
-            "begin": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=:)",
-            "beginCaptures": {
-                "0": { "name": "entity.name.type.klym" },
-                "1": { "name": "variable.enum.klym" }
-            },
-            "end": "\\b"
         },
         {
             "name": "keyword.operator.klym",
@@ -44,11 +44,11 @@
         },
         {
             "name": "constant.language.null.klym",
-            "match": "\\b(null|blank)\\b"
+            "match": "\\b(null)\\b"
         },
         {
             "name": "storage.modifier.klym",
-            "match": "\\b(private|prefix|postfix)\\b"
+            "match": "\\b(public|const)\\b"
         },
         {
             "begin": "\\bnew\\b\\s+([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()",
@@ -81,7 +81,7 @@
         },
         {
             "name": "keyword.other.klym",
-            "match": "\\b(new|class|enum)\\b"
+            "match": "\\b(new|class|enum|constructor)\\b"
         },
         {
             "begin": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b\\s+([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()",
