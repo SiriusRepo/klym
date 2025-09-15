@@ -2,7 +2,7 @@
   "name": "klym",
   "displayName": "Klym",
   "description": "LSP for Klym and KITM",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.103.0"
   },
